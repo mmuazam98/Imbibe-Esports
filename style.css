@@ -344,18 +344,20 @@ section#main {
   opacity: 0;
   transform: translateY(-20px);
 }
-#main .container .card .content h5:nth-child(1) {
+#main .container .card .content .contentBx h5.span {
+  font-size: 13px;
+
+  margin-bottom: 5px;
+}
+#main .container .card .content h5:nth-child(2) {
   transition-delay: 0.4s;
   transition-delay: calc(0.2s * var(--i));
 }
-#main .container .card .content h5:nth-child(2) {
+#main .container .card .content h5:nth-child(3) {
   transition-delay: 0.6s;
   transition-delay: calc(0.2s * var(--i));
 }
-#main .container .card .content .contentBx h5.span {
-  font-size: 13px;
-  margin-bottom: 5px;
-}
+
 #main .container .card:hover .content .contentBx h5 {
   opacity: 1;
   transform: translateY(0);
