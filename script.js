@@ -230,9 +230,9 @@ info.forEach((s, index) => {
           <div class="contentBx">
             <p class="extName" style="--i:2">${s.name}</p>
             <h5 class="mt-3 name" style="--i: 2">${s.name}</h5>
-            <h5 class="span" style="--i: 3"></h5>
+            <h5 class="span votes" style="--i: 3"></h5>
           </div>
-          <button class="btn btn-dark" id=${s.id} style="--i: 2.5">Vote</button>
+          <button class="btn btn-white btn-animate" id=${s.id} style="--i: 2.5">Vote</button>
         </div>
        
       </div>
