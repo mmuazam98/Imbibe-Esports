@@ -284,9 +284,9 @@ let votesArr = [];
 
 $(".card button").click(function () {
   let btnID = this.id;
-
+  let arr = [];
   let retrievedData = localStorage.getItem("votesArr");
-  let arr = JSON.parse(retrievedData);
+  arr = JSON.parse(retrievedData);
 
   if (arr.includes(btnID)) {
     $("#popup-wrapper").addClass("show");
