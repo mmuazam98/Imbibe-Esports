@@ -1,6 +1,6 @@
 // Your web app's Firebase configuration
 
-var firebaseConfig = {
+let firebaseConfig = {
   apiKey: "AIzaSyD2Ho9_xWNOraTf8STP2huO-9sb8JIzgMo",
   authDomain: "realtime-view-coun.firebaseapp.com",
   projectId: "realtime-view-coun",
@@ -45,7 +45,7 @@ let info = [
   },
   {
     id: 5,
-    name: "Black Sawan",
+    name: "BLac Sawan",
     img: "BLac Sawan.jpeg",
   },
   {
@@ -95,7 +95,7 @@ let info = [
   },
   {
     id: 15,
-    name: "JD Gaming LIVE",
+    name: "JD Gaming",
     img: "JD Gaming LIVE.png",
   },
   {
@@ -201,8 +201,8 @@ let info = [
   },
   {
     id: 36,
-    name: "VareMouse",
-    img: "VareMouse.jpeg",
+    name: "leteMouse",
+    img: "leteMouse.jpeg",
   },
   {
     id: 37,
@@ -226,12 +226,15 @@ info.forEach((s, index) => {
           <img src="images/${s.img}" alt="" />
         </div>
         <div class="content">
+          <span class="one ${s.id}">+1</span>
           <div class="contentBx">
+            <p class="extName" style="--i:2">${s.name}</p>
             <h5 class="mt-3 name" style="--i: 2">${s.name}</h5>
             <h5 class="span" style="--i: 3"></h5>
           </div>
           <button class="btn btn-dark" id=${s.id} style="--i: 2.5">Vote</button>
         </div>
+       
       </div>
         <!-- card end-->`
   );
@@ -251,7 +254,7 @@ const reference = firebase.database();
 
 let votes = 0;
 let i = 0;
-var el = $(".span");
+let el = $(".span");
 
 let showVotes = () => {
   let msg;
@@ -277,14 +280,24 @@ let writeUserData = (id, vts) => {
       votes: vts,
     });
 };
+let votesArr = [];
 
 $(".card button").click(function () {
-  if (window.localStorage.vote) {
+  let btnID = this.id;
+
+  let retrievedData = localStorage.getItem("votesArr");
+  let arr = JSON.parse(retrievedData);
+  console.log(arr.includes(btnID));
+  if (arr.includes(btnID)) {
     $("#popup-wrapper").addClass("show");
   } else {
-    let btnID = this.id;
     showVotes();
-    window.localStorage.vote = true;
+    // window.localStorage.vote = true;
+    votesArr.push(btnID);
+    localStorage.setItem("votesArr", JSON.stringify(votesArr));
+
+    $(this).closest(".card").find(".one").addClass("showOne");
+
     let currVotes = 0;
     firebase
       .database()
@@ -300,8 +313,9 @@ $(".card button").click(function () {
 });
 
 $(document).ready(function () {
-  $("#popup-wrapper-1").addClass("show");
-
+  if (!window.localStorage.vote) {
+    $("#popup-wrapper-1").addClass("show");
+  }
   $(".search .search__btn").click(function () {
     $(".search").addClass("search--visible");
   });
