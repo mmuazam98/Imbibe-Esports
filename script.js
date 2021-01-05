@@ -16,7 +16,6 @@ let get_viewers_ip = (json) => {
   count_view(viewers_ip);
 };
 
-let main = $("#elements");
 let info = [
   {
     id: 0,
@@ -216,6 +215,9 @@ let info = [
     img: "Zia Gaming.png",
   },
 ];
+
+let main = $("#elements");
+
 info.forEach((s, index) => {
   main.append(
     ` <div class="card">
@@ -244,6 +246,7 @@ let count_view = (viewers_ip) => {
   }
   console.log(`Your IP Address: ${ipAddress}`);
 };
+
 const reference = firebase.database();
 
 let votes = 0;
@@ -274,7 +277,6 @@ let writeUserData = (id, vts) => {
       votes: vts,
     });
 };
-$("#popup-wrapper-1").addClass("show");
 
 $(".card button").click(function () {
   if (window.localStorage.vote) {
@@ -296,18 +298,24 @@ $(".card button").click(function () {
       });
   }
 });
+
 $(document).ready(function () {
+  $("#popup-wrapper-1").addClass("show");
+
   $(".search .search__btn").click(function () {
     $(".search").addClass("search--visible");
   });
+
   $(document).on("click", function (e) {
     if ($(e.target).closest(".search").length === 0) {
       $(".search").removeClass("search--visible");
     }
   });
 });
-function myFunction() {
-  var input, filter, cards, cardContainer, title, i;
+
+let myFunction = () => {
+  let input, filter, cards;
+  let cardContainer, title, i;
   input = document.getElementById("myFilter");
   filter = input.value.toUpperCase();
   cardContainer = document.getElementById("elements");
@@ -320,31 +328,4 @@ function myFunction() {
       cards[i].style.display = "none";
     }
   }
-}
-// console.log(currVotes);
-
-// reference.ref("votes/" + btnID).set({
-//   // viewers_ip: viewers_ip,
-//   votes: 0,
-// });
-// reference.ref("page_views/").on("value", function (snapshot) {
-//   // console.log(snapshot);
-//   snapshot.forEach(function (userSnapshot) {
-//     currVotes = userSnapshot.val().votes;
-//   });
-// });
-
-// reference.ref("votes").on("value", function (snapshot) {
-//   views = snapshot.numChildren();
-//   console.log(snapshot.numChildren());
-// });
-
-// for(let i=0;i<40;i++){
-// firebase
-//   .database()
-//   .ref("page_views/" + i)
-//   .set({
-//     // viewers_ip: viewers_ip,
-//     votes: votes,
-//   });
-// }
+};
