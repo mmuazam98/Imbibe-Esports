@@ -281,14 +281,13 @@ let writeUserData = (id, vts) => {
     });
 };
 let votesArr = [];
-
+// localStorage.clear();
 $(".card button").click(function () {
   let btnID = this.id;
   let arr = [];
   let retrievedData = localStorage.getItem("votesArr");
   arr = JSON.parse(retrievedData);
-
-  if (arr.includes(btnID)) {
+  if (arr != null && arr.includes(btnID)) {
     $("#popup-wrapper").addClass("show");
   } else {
     showVotes();
