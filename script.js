@@ -201,8 +201,8 @@ let info = [
   },
   {
     id: 36,
-    name: "leteMouse",
-    img: "leteMouse.jpeg",
+    name: "VareMouse",
+    img: "VareMouse.jpeg",
   },
   {
     id: 37,
@@ -312,7 +312,7 @@ $(".card button").click(function () {
 });
 
 $(document).ready(function () {
-  if (!window.localStorage.vote) {
+  if (!window.localStorage) {
     $("#popup-wrapper-1").addClass("show");
   }
   $(".search .search__btn").click(function () {

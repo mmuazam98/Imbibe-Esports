@@ -142,7 +142,27 @@ nav .logo {
   width: 150px;
 }
 main .tname {
+  position: relative;
   height: 150px;
+  width: auto;
+  transition: 0.5s;
+}
+@media (max-width: 552px) {
+  main .tname {
+    height: 120px;
+    top: 20px;
+  }
+  nav .logo {
+    width: 120px;
+  }
+}
+@media (max-width: 380px) {
+  main .tname {
+    height: 110px;
+  }
+  nav .logo {
+    width: 110px;
+  }
 }
 .search {
   position: absolute;
@@ -179,6 +199,20 @@ main .tname {
   }
   100% {
     width: 300px;
+  }
+}
+@media (max-width: 500px) {
+  .search--visible {
+    width: 220px;
+    animation: width 0.5s ease;
+  }
+  @keyframes width {
+    0% {
+      width: 0px;
+    }
+    100% {
+      width: 220px;
+    }
   }
 }
 .search--visible .search__input {
