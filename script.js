@@ -15,164 +15,163 @@ let get_viewers_ip = (json) => {
   viewers_ip = json.ip;
   count_view(viewers_ip);
 };
-
 let info = [
   {
     id: 0,
-    name: "Aaron Stone",
-    img: "Aaron Stone.jpeg",
-  },
-  {
-    id: 1,
-    name: "Antaryami",
-    img: "Antaryami.jpeg",
-  },
-  {
-    id: 2,
-    name: "Azrecs",
-    img: "Azrecs logo transparent.jpg",
-  },
-
-  {
-    id: 3,
-    name: "Baba Gaming",
-    img: "Baba gaming.jpg",
-  },
-  {
-    id: 4,
-    name: "Believe",
-    img: "Believe.png",
-  },
-  {
-    id: 5,
-    name: "BLac Sawan",
-    img: "BLac Sawan.jpeg",
-  },
-  {
-    id: 6,
-    name: "Blind Satan",
-    img: "blind satan.png",
-  },
-  {
-    id: 7,
-    name: "EG Gaming",
-    img: "EGLOGO.jpg",
-  },
-  {
-    id: 8,
-    name: "Exodia",
-    img: "Exodia.jpeg",
-  },
-  {
-    id: 9,
     name: "Fnatic MaxKash",
     img: "Fnatic MaxKash.jpeg",
   },
   {
-    id: 10,
-    name: "Freeky Gaming",
-    img: "Freeky Gaming.jpg",
-  },
-  {
-    id: 11,
-    name: "GameXPro",
-    img: "gamexpro 2020.jpg.jpeg",
-  },
-  {
-    id: 12,
-    name: "Gunshot",
-    img: "Gunshot.jpeg",
-  },
-  {
-    id: 13,
+    id: 1,
     name: "GyroGod",
     img: "GyroGod.jpeg",
   },
   {
-    id: 14,
+    id: 2,
+    name: "Encore",
+    img: "Encore.jpg",
+  },
+  {
+    id: 3,
+    name: "Smokie",
+    img: "Smokie.jpeg",
+  },
+  {
+    id: 4,
+    name: "SangwaN",
+    img: "SangwaN.png",
+  },
+  {
+    id: 5,
     name: "Immortal",
     img: "Immortal .png",
   },
   {
-    id: 15,
-    name: "JD Gaming",
-    img: "JD Gaming LIVE.png",
+    id: 6,
+    name: "Believe",
+    img: "Believe.png",
   },
   {
-    id: 16,
-    name: "Joker Ki Haveli",
-    img: "Joker Ki Haveli.jpeg",
+    id: 7,
+    name: "GameXPro",
+    img: "gamexpro 2020.jpg.jpeg",
+  },
+
+  {
+    id: 8,
+    name: "BLac Sawan",
+    img: "BLac Sawan.jpeg",
   },
   {
-    id: 17,
-    name: "Krutika Plays",
-    img: "Krutika plays.jpeg",
+    id: 9,
+    name: "Celtz Roxx",
+    img: "Celtz Roxx.jpeg",
   },
   {
-    id: 18,
-    name: "Litboi",
-    img: "Litboi.jpeg",
-  },
-  {
-    id: 19,
-    name: "Madmax",
-    img: "Madmax.jpeg",
-  },
-  {
-    id: 20,
-    name: "Magician",
-    img: "Magician.jpeg",
-  },
-  {
-    id: 21,
-    name: "Megaboi",
-    img: "Megaboi.png",
-  },
-  {
-    id: 22,
-    name: "NeonYKE",
-    img: "NeonYKE.jpg",
-  },
-  {
-    id: 23,
-    name: "NRX",
-    img: "NRX.jpeg",
-  },
-  {
-    id: 24,
-    name: "Potter Gaming",
-    img: "Potter gaming.png",
-  },
-  {
-    id: 25,
+    id: 10,
     name: "ReaperX",
     img: "ReaperX.jpeg",
   },
   {
-    id: 26,
-    name: "RIP",
+    id: 11,
+    name: "Aztecs",
+    img: "Azrecs logo transparent.jpg",
+  },
+  {
+    id: 12,
+    name: "Antaryami",
+    img: "Antaryami.jpeg",
+  },
+  {
+    id: 13,
+    name: "RIP Officials",
     img: "RIP.png",
+  },
+  {
+    id: 14,
+    name: "Gunshot",
+    img: "Gunshot.jpeg",
+  },
+  {
+    id: 15,
+    name: "Upthrust",
+    img: "Upthrust Esports.jpeg",
   },
 
   {
-    id: 27,
-    name: "Sniper1",
-    img: "sniper1.png",
+    id: 16,
+    name: "Blind x Satan",
+    img: "blind satan.png",
   },
   {
-    id: 28,
-    name: "Spectra Gaming",
-    img: "Spectra Gaming.png",
+    id: 17,
+    name: "Omega",
+    img: "Omega.png",
   },
   {
-    id: 29,
+    id: 18,
     name: "Team Tamilas",
     img: "Team Tamilas.jpeg",
   },
   {
-    id: 30,
+    id: 19,
+    name: "Blind x Pain",
+    img: "xpain Black Outer.png",
+  },
+  {
+    id: 20,
+    name: "Krutika Plays",
+    img: "Krutika plays.jpeg",
+  },
+  {
+    id: 21,
+    name: "Zia Gaming",
+    img: "Zia Gaming.png",
+  },
+  {
+    id: 22,
+    name: "Star Girl",
+    img: "Star Girl.jpeg",
+  },
+  {
+    id: 23,
+    name: "Madmax",
+    img: "Madmax.jpeg",
+  },
+  {
+    id: 24,
+    name: "NeonKYE",
+    img: "NeonYKE.jpg",
+  },
+  {
+    id: 25,
+    name: "Megaboi",
+    img: "Megaboi.png",
+  },
+  {
+    id: 26,
     name: "The Gamer Ajay",
     img: "The Gamer Ajay.jpeg",
+  },
+  {
+    id: 27,
+    name: "Udaal Pavvya",
+    img: "Udaal pavvya.jpeg",
+  },
+  {
+    id: 28,
+    name: "Freeky Gaming",
+    img: "Freeky Gaming.jpg",
+  },
+  {
+    id: 29,
+    name: "Litboi",
+    img: "Litboi.jpeg",
+  },
+  {
+    id: 30,
+    name: "VareMouse",
+    img: "VareMouse.jpeg",
   },
   {
     id: 31,
@@ -181,41 +180,55 @@ let info = [
   },
   {
     id: 32,
-    name: "TODxGaming",
-    img: "TODxGaming.jpeg",
+    name: "Potter Gaming",
+    img: "Potter gaming.png",
   },
   {
     id: 33,
-    name: "Udaal Pavvya",
-    img: "Udaal pavvya.jpeg",
+    name: "Aaron Stone",
+    img: "Aaron Stone.jpeg",
   },
   {
     id: 34,
+    name: "JD Gaming LIVE",
+    img: "JD Gaming LIVE.png",
+  },
+  {
+    id: 35,
     name: "Unni Gaming",
     img: "Unni Gaming.jpeg",
   },
   {
-    id: 35,
+    id: 36,
     name: "Vaadhiyaar",
     img: "Vaadhiyaar.jpeg",
   },
   {
-    id: 36,
-    name: "VareMouse",
-    img: "VareMouse.jpeg",
-  },
-  {
     id: 37,
-    name: "Xpain",
-    img: "xpain BLACK OUTER.jpg",
+    name: "Spectra Gaming",
+    img: "Spectra Gaming.png",
   },
   {
     id: 38,
-    name: "Zia Gaming",
-    img: "Zia Gaming.png",
+    name: "NRX",
+    img: "NRX.jpeg",
+  },
+  {
+    id: 39,
+    name: "Baba Gaming",
+    img: "Baba gaming.png",
+  },
+  {
+    id: 40,
+    name: "Joker Ki Haveli",
+    img: "Joker Ki Haveli.jpeg",
+  },
+  {
+    id: 41,
+    name: "Magician",
+    img: "Magician.jpeg",
   },
 ];
-
 let main = $("#elements");
 
 info.forEach((s, index) => {
@@ -241,14 +254,23 @@ info.forEach((s, index) => {
 });
 
 // console.log(viewers_ip);
-let count_view = (viewers_ip) => {
-  let views;
-  let ipAddress = viewers_ip.toString();
-  for (let i = 0; i < ipAddress.length; i++) {
-    ipAddress = ipAddress.replace(".", "-");
-  }
-  console.log(`Your IP Address: ${ipAddress}`);
-};
+// for(let i=0;i<40;i++){
+// firebase
+//   .database()
+//   .ref("page_views/" + i)
+//   .set({
+//     // viewers_ip: viewers_ip,
+//     votes: votes,
+//   });
+// }
+// let count_view = (viewers_ip) => {
+//   let views;
+//   let ipAddress = viewers_ip.toString();
+//   for (let i = 0; i < ipAddress.length; i++) {
+//     ipAddress = ipAddress.replace(".", "-");
+//   }
+//   console.log(`Your IP Address: ${ipAddress}`);
+// };
 
 const reference = firebase.database();
 
@@ -262,7 +284,7 @@ let showVotes = () => {
     .database()
     .ref("votes/")
     .on("value", (snap) => {
-      for (i = 0; i < 39; i++) {
+      for (i = 0; i < 42; i++) {
         let v = snap.val()[i].votes;
         v == 1 ? (msg = "vote") : (msg = "votes");
         el[i].innerHTML = `${v} <span>${msg}</span>`;
