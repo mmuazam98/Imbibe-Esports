@@ -30,8 +30,13 @@ body {
   height: 100vh;
   z-index: -2;
 }
+@media (max-width: 850px) {
+  .bg {
+    width: auto;
+  }
+}
 .content-overlay {
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5));
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.2));
   z-index: -1;
   position: fixed;
   height: 100%;
@@ -139,7 +144,9 @@ nav {
   justify-content: flex-start;
 }
 nav .logo {
+  transition: all 0.5s;
   width: 150px;
+  height: 150px;
 }
 main .tname {
   position: relative;
@@ -152,18 +159,8 @@ main .tname {
     height: 120px;
     top: 20px;
   }
-  nav .logo {
-    width: 120px;
-  }
 }
-@media (max-width: 380px) {
-  main .tname {
-    height: 110px;
-  }
-  nav .logo {
-    width: 110px;
-  }
-}
+
 .search {
   position: absolute;
   right: 10px;
@@ -251,6 +248,80 @@ main .tname {
   display: flex;
   justify-content: center;
 }
+#timer-section {
+  position: relative;
+  margin-top: -50px;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  transition: 0.6s;
+  /* background: rgba(0, 0, 0, 0.1); */
+}
+#timer-section h1 {
+  font-size: 30px;
+  color: white;
+}
+#timer-section div {
+  display: inline-block;
+  line-height: 1;
+  padding: 20px 12px;
+  font-size: 40px;
+}
+
+#timer-section span {
+  display: block;
+  font-size: 20px;
+  color: white;
+}
+#timer-section #days {
+  font-size: 50px;
+  color: #db4844;
+}
+#timer-section #hours {
+  font-size: 50px;
+  color: #f07c22;
+}
+#timer-section #minutes {
+  font-size: 50px;
+  color: #f6da74;
+}
+#timer-section #seconds {
+  font-size: 50px;
+  color: #abcd58;
+}
+@media (max-width: 800px) {
+  nav .logo {
+    width: 135px;
+    height: 135px;
+  }
+  #timer-section {
+    transform: scale(0.85);
+  }
+}
+@media (max-width: 520px) {
+  nav .logo {
+    width: 120px;
+    height: 120px;
+  }
+  #timer-section {
+    transform: scale(0.7);
+  }
+  #timer-section div {
+    padding: 20px 5px;
+  }
+  #timer-section span {
+    font-size: 16px;
+  }
+}
+@media (max-width: 380px) {
+  main .tname {
+    height: 110px;
+  }
+  nav .logo {
+    width: 100px;
+    height: 100px;
+  }
+}
 section#main {
   position: relative;
   top: -30px;
@@ -312,21 +383,28 @@ section#main {
   transition: all 0.5s;
   transition-delay: 0s;
 }
-#main .container .card:hover .content {
+#main .container .card-hover:hover .content {
   bottom: 0;
   background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.7));
 }
+#main .container .card .content .outer {
+  width: 250px !important;
+}
 #main .container .card .content .extName {
-  font-size: 15px;
-  position: absolute;
+  /* width: 250px; */
+  display: flex;
+  font-size: 13px;
+  text-transform: uppercase;
   color: white;
+  position: absolute;
   top: 4px;
-  left: 50%;
-  transform: translate(-50%, 0%);
+  left: 44%;
+  transform: translate(-44%, 0%);
+
   transition: 0.2s;
   transition-delay: calc(0.1s * var(--i));
 }
-#main .container .card:hover .content .extName {
+#main .container .card-hover:hover .content .extName {
   opacity: 0;
   top: -100px;
 }
