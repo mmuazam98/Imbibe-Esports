@@ -160,7 +160,9 @@ main .tname {
     top: 20px;
   }
 }
-
+.list li {
+  margin-bottom: 7px;
+}
 .search {
   position: absolute;
   right: 10px;
@@ -488,6 +490,7 @@ section#main {
 .btn-white {
   background-color: #000 !important;
   color: #fff;
+  display: none;
 }
 
 .btn::after {

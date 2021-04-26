@@ -1,11 +1,12 @@
-const firebaseConfig = {
+// Your web app's Firebase configuration
+
+let firebaseConfig = {
   apiKey: "AIzaSyD2Ho9_xWNOraTf8STP2huO-9sb8JIzgMo",
   authDomain: "realtime-view-coun.firebaseapp.com",
-  databaseURL: "https://realtime-view-coun-default-rtdb.firebaseio.com",
   projectId: "realtime-view-coun",
   storageBucket: "realtime-view-coun.appspot.com",
   messagingSenderId: "158085124443",
-  appId: "1:158085124443:web:e3f5e3833c9b4975120a7e",
+  appId: "1:158085124443:web:6a9b105f835ccc02120a7e",
 };
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
@@ -164,7 +165,7 @@ let info = [
   },
   {
     id: 29,
-    name: "Zia Gaming",
+    name: "Ziia Gaming",
     img: "Zia Gaming1.png",
   },
   {
@@ -267,7 +268,7 @@ let main = $("#elements");
 
 info.forEach((s, index) => {
   main.append(
-    ` <div class="card card-hover" id="${s.name.replaceAll(/\s/g, "").toLowerCase()}">
+    ` <div class="card">
         <!-- card start-->
         <div class="imgBx">
           <img src="logos/${s.img}" alt="" />
@@ -279,11 +280,9 @@ info.forEach((s, index) => {
               <span class="extName" style="--i:2">${s.name}</span>
             </div>
             <h5 class="mt-3 name" style="--i: 2">${s.name}</h5>
-            <h5 class="span" style="--i: 3">loading...</h5>
+            <h5 class="span" style="--i: 3"></h5>
           </div>
-          <button class="btn btn-white btn-animate" id=${
-            s.id
-          } style="--i: 2.5">Vote</button>
+          <button class="btn btn-white btn-animate" id=${s.id} style="--i: 2.5">Vote</button>
         </div>
        
       </div>
@@ -318,14 +317,12 @@ let el = $(".span");
 
 let showVotes = () => {
   let msg;
-  console.log("hi");
   firebase
     .database()
     .ref("votes/")
     .on("value", (snap) => {
       for (i = 0; i < 49; i++) {
         let v = snap.val()[i].votes;
-        console.log(v);
         v == 1 ? (msg = "vote") : (msg = "votes");
         el[i].innerHTML = `${v} <span>${msg}</span>`;
       }
@@ -343,25 +340,19 @@ let writeUserData = (id, vts) => {
     });
 };
 let votesArr = [];
-
-if (!window.localStorage.view) {
-  let arr = ["-1"];
-  localStorage.setItem("votearr", JSON.stringify(arr));
-}
-
-let retrievedData = localStorage.getItem("votearr");
-let arr = JSON.parse(retrievedData);
 // localStorage.clear();
 $(".card button").click(function () {
   let btnID = this.id;
-
+  let arr = [];
+  let retrievedData = localStorage.getItem("votesArr");
+  arr = JSON.parse(retrievedData);
   if (arr != null && arr.includes(btnID)) {
     $("#popup-wrapper").addClass("show");
   } else {
     showVotes();
     // window.localStorage.vote = true;
-    arr.push(btnID);
-    localStorage.setItem("votearr", JSON.stringify(arr));
+    votesArr.push(btnID);
+    localStorage.setItem("votesArr", JSON.stringify(votesArr));
 
     $(this).closest(".card").find(".one").addClass("showOne");
 
@@ -380,9 +371,8 @@ $(".card button").click(function () {
 });
 
 $(document).ready(function () {
-  window.localStorage.view = true;
   let arr = [];
-  let retrievedData = localStorage.getItem("votearr");
+  let retrievedData = localStorage.getItem("votesArr");
   arr = JSON.parse(retrievedData);
   if (arr == null) $("#popup-wrapper-1").addClass("show");
 
@@ -415,7 +405,7 @@ let myFunction = () => {
 };
 let makeTimer = () => {
   //		var endTime = new Date("29 April 2018 9:56:00 GMT+01:00");
-  var endTime = new Date("16 January 2021 22:00:00 GMT+05:30");
+  var endTime = new Date("10 January 2021 10:00:00 GMT+05:30");
   endTime = Date.parse(endTime) / 1000;
 
   var now = new Date();
@@ -437,11 +427,11 @@ let makeTimer = () => {
   if (seconds < "10") {
     seconds = "0" + seconds;
   }
-
-  // $("#days").html(days + "<span>Days</span>");
-  // $("#hours").html(hours + "<span>Hours</span>");
-  // $("#minutes").html(minutes + "<span>Minutes</span>");
-  // $("#seconds").html(seconds + "<span>Seconds</span>");
+  $("#timer-section").show();
+  $("#days").html(days + "<span>Days</span>");
+  $("#hours").html(hours + "<span>Hours</span>");
+  $("#minutes").html(minutes + "<span>Minutes</span>");
+  $("#seconds").html(seconds + "<span>Seconds</span>");
   if (timeLeft < 0) {
     // $("#timer-section").hide();
     $(".card").addClass("card-hover");

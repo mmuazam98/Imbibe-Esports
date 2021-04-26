@@ -11,14 +11,9 @@
       integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
       crossorigin="anonymous"
     />
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
-      integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEh5Sl0sibVcOQVnN"
-      crossorigin="anonymous"
-    />
-    <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-database.js"></script>
+   
+    <script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-database.js"></script>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body class="light">
@@ -42,12 +37,12 @@
           <span id="close-1">&times;</span>
           <h3 id="err">Hello, and Welcome.</h3>
           <p>General Instructions:</p>
-          <ul>
+          <ul class="list">
             <li>This is purely for gaming and fun purpose.</li>
-            <li>Do visit and vote for your favourite team.</li>
+            <li>Do visit and vote for your favourite team(s).</li>
+            <li>You can vote once for each team.</li>
             <li>Share it with your friends.</li>
-            <li>You can only vote once, so do it wisely.</li>
-            <li>Hope u have a great time.</li>
+            <li>Hope you have a great time.</li>
           </ul>
           <p>BEST OF LUCK</p>
         </div>
@@ -66,7 +61,7 @@
       </section>
       <section id="timer-section">
         <div id="timer">
-          <h1>Voting begins in:</h1>
+          <h1>Voting has ended.</h1>
           <div id="days"></div>
           <div id="hours"></div>
           <div id="minutes"></div>
@@ -116,6 +111,7 @@
       integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
       crossorigin="anonymous"
     ></script>
+    
     <script src="script.js"></script>
     <!-- <script
       type="application/javascript"
