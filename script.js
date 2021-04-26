@@ -311,7 +311,11 @@ info.forEach((s, index) => {
 // };
 
 // const reference = firebase.database();
-
+let numberWithCommas = (x) => {
+  var parts = x.toString().split(".");
+  parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+  return parts.join(".");
+};
 let votes = 0;
 let i = 0;
 let el = $(".span");
@@ -327,7 +331,7 @@ let showVotes = () => {
         let v = snap.val()[i].votes;
         console.log(v);
         v == 1 ? (msg = "vote") : (msg = "votes");
-        el[i].innerHTML = `${v} <span>${msg}</span>`;
+        el[i].innerHTML = `${numberWithCommas(v)} <span>${msg}</span>`;
       }
     });
 };
